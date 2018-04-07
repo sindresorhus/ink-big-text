@@ -1,0 +1,48 @@
+# ink-big-text [![Build Status](https://travis-ci.org/sindresorhus/ink-big-text.svg?branch=master)](https://travis-ci.org/sindresorhus/ink-big-text)
+
+> Awesome text component for [Ink](https://github.com/vadimdemedes/ink)
+
+![](screenshot.png)
+
+
+## Install
+
+```
+$ npm install ink-big-text
+```
+
+
+## Usage
+
+```js
+import {h, render} from 'ink';
+import Gradient from 'ink-gradient';
+import BigText from 'ink-big-text';
+
+render(
+	<div>
+		<Gradient name="rainbow">
+			<BigText text="unicorns"/>
+		</Gradient>
+	</div>
+);
+```
+
+
+## API
+
+### `<BigText/>`
+
+Props except for `text` are passed as options to [`cfonts`](https://github.com/dominikwilkowski/cfonts). The only difference is that the `background` option is named `backgroundColor` here. See the prop types in [`index.js`](index.js) for more.
+
+
+## Related
+
+- [ink-gradient](https://github.com/sindresorhus/ink-gradient) - Gradient color component for Ink
+- [ink-box](https://github.com/sindresorhus/ink-box) - Box component for Ink
+- [ink-link](https://github.com/sindresorhus/ink-link) - Link component for Ink
+
+
+## License
+
+MIT © [Sindre Sorhus](https://sindresorhus.com)

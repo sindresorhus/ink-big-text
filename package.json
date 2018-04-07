@@ -1,0 +1,89 @@
+{
+	"name": "ink-big-text",
+	"version": "0.0.0",
+	"description": "Awesome text component for Ink",
+	"license": "MIT",
+	"repository": "sindresorhus/ink-big-text",
+	"author": {
+		"name": "Sindre Sorhus",
+		"email": "sindresorhus@gmail.com",
+		"url": "sindresorhus.com"
+	},
+	"main": "dist.js",
+	"engines": {
+		"node": ">=6"
+	},
+	"scripts": {
+		"build": "babel index.js --out-file=dist.js",
+		"prepublish": "npm run build",
+		"pretest": "npm run build",
+		"test": "xo && ava"
+	},
+	"files": [
+		"dist.js"
+	],
+	"keywords": [
+		"ink-component",
+		"ink",
+		"component",
+		"text",
+		"font",
+		"big",
+		"large",
+		"string",
+		"react",
+		"jsx",
+		"terminal",
+		"term",
+		"console",
+		"command-line"
+	],
+	"dependencies": {
+		"cfonts": "^1.1.3",
+		"prop-types": "^15.6.1"
+	},
+	"devDependencies": {
+		"ava": "*",
+		"babel-cli": "^6.26.0",
+		"babel-plugin-transform-react-jsx": "^6.24.1",
+		"clear-module": "^2.1.0",
+		"eslint-config-xo-react": "^0.16.0",
+		"eslint-plugin-react": "^7.7.0",
+		"ink": "^0.4.1",
+		"strip-ansi": "^4.0.0",
+		"xo": "*"
+	},
+	"babel": {
+		"presets": [
+			"@ava/stage-4"
+		],
+		"plugins": [
+			[
+				"transform-react-jsx",
+				{
+					"pragma": "h",
+					"useBuiltIns": true
+				}
+			]
+		]
+	},
+	"ava": {
+		"babel": "inherit"
+	},
+	"xo": {
+		"extends": [
+			"xo-react"
+		],
+		"ignores": [
+			"dist.js"
+		],
+		"settings": {
+			"react": {
+				"pragma": "h"
+			}
+		},
+		"rules": {
+			"react/no-unused-prop-types": "off"
+		}
+	}
+}
