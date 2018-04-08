@@ -8,20 +8,16 @@ const BigText = props => {
 	props = Object.assign({}, props);
 	delete props.text;
 
-	// Fix bad API in CFonts
-	if (props.backgroundColor) {
-		props.background = props.backgroundColor;
-		delete props.backgroundColor;
-	}
-
 	return <span>{CFonts.render(text, props).string}</span>;
 };
 
 BigText.defaultProps = {
 	font: 'block',
 	align: 'left',
-	colors: [],
-	backgroundColor: 'black',
+	colors: [
+		'system'
+	],
+	backgroundColor: 'transparent',
 	letterSpacing: 1,
 	lineHeight: 1,
 	space: true,
@@ -46,6 +42,7 @@ BigText.propTypes = {
 	]),
 	colors: PropTypes.arrayOf(
 		PropTypes.oneOf([
+			'system',
 			'black',
 			'red',
 			'green',
@@ -54,11 +51,11 @@ BigText.propTypes = {
 			'magenta',
 			'cyan',
 			'white',
-			'gray',
-			'candy'
+			'gray'
 		])
 	),
 	backgroundColor: PropTypes.oneOf([
+		'transparent',
 		'black',
 		'red',
 		'green',
