@@ -39,7 +39,7 @@
 		"command-line"
 	],
 	"dependencies": {
-		"cfonts": "^1.2.0",
+		"cfonts": "^2.1.2",
 		"prop-types": "^15.6.1"
 	},
 	"devDependencies": {
