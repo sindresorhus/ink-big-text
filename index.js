@@ -1,4 +1,5 @@
-import {h} from 'ink';
+import React from 'react';
+import {Text} from 'ink';
 import PropTypes from 'prop-types';
 import CFonts from 'cfonts';
 
@@ -8,7 +9,7 @@ const BigText = props => {
 	props = Object.assign({}, props);
 	delete props.text;
 
-	return <span>{CFonts.render(text, props).string}</span>;
+	return <Text>{CFonts.render(text, props).string}</Text>;
 };
 
 BigText.defaultProps = {
