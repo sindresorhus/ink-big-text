@@ -3,14 +3,7 @@ import {Text} from 'ink';
 import PropTypes from 'prop-types';
 import CFonts from 'cfonts';
 
-// TODO: Use object spread in the future
-const BigText = props => {
-	const {text} = props;
-	props = Object.assign({}, props);
-	delete props.text;
-
-	return <Text>{CFonts.render(text, props).string}</Text>;
-};
+const BigText = ({text, ...props}) => <Text>{CFonts.render(text, props).string}</Text>;
 
 BigText.defaultProps = {
 	font: 'block',
