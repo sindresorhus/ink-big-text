@@ -1,5 +1,6 @@
+import React from 'react';
 import {serial as test} from 'ava';
-import {h, renderToString} from 'ink';
+import {render} from 'ink-testing-library';
 import clearModule from 'clear-module';
 import stripAnsi from 'strip-ansi';
 
@@ -9,11 +10,11 @@ test('render', t => {
 	clearModule.all();
 	const BigText = require('.');
 
-	const actual = renderToString(
+	const {lastFrame} = render(
 		<BigText text="unicorns"/>
 	);
-	console.log(actual);
-	t.snapshot(stripAnsi(actual));
+	console.log(lastFrame());
+	t.snapshot(stripAnsi(lastFrame()));
 
 	delete process.env.FORCE_COLOR;
 });
