@@ -16,16 +16,14 @@ $ npm install ink-big-text
 
 ```js
 import React from 'react';
-import {render, Box} from 'ink';
+import {render} from 'ink';
 import Gradient from 'ink-gradient';
 import BigText from 'ink-big-text';
 
 render(
-	<Box>
-		<Gradient name="rainbow">
-			<BigText text="unicorns"/>
-		</Gradient>
-	</Box>
+	<Gradient name="rainbow">
+		<BigText text="unicorns"/>
+	</Gradient>
 );
 ```
 
