@@ -35,18 +35,7 @@ BigText.propTypes = {
 		'right'
 	]),
 	colors: PropTypes.arrayOf(
-		PropTypes.oneOf([
-			'system',
-			'black',
-			'red',
-			'green',
-			'yellow',
-			'blue',
-			'magenta',
-			'cyan',
-			'white',
-			'gray'
-		])
+		PropTypes.string,
 	),
 	backgroundColor: PropTypes.oneOf([
 		'transparent',
