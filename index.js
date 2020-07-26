@@ -22,6 +22,11 @@ BigText.propTypes = {
 	text: PropTypes.string.isRequired,
 	font: PropTypes.oneOf([
 		'block',
+		'slick',
+		'tiny',
+		'grid',
+		'pallet',
+		'shade',
 		'simple',
 		'simpleBlock',
 		'3d',
