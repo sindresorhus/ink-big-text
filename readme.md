@@ -1,4 +1,4 @@
-# ink-big-text [![Build Status](https://travis-ci.com/sindresorhus/ink-big-text.svg?branch=master)](https://travis-ci.com/github/sindresorhus/ink-big-text)
+# ink-big-text
 
 > Awesome text component for [Ink](https://github.com/vadimdemedes/ink)
 
