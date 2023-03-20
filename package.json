@@ -11,11 +11,16 @@
 		"url": "https://sindresorhus.com"
 	},
 	"main": "dist.js",
+	"type": "module",
+	"exports": {
+		"types": "./build/index.d.ts",
+		"default": "./build/index.js"
+	},
 	"engines": {
-		"node": ">=8"
+		"node": ">=14.16"
 	},
 	"scripts": {
-		"build": "babel index.js --out-file=dist.js",
+		"build": "tsc",
 		"prepublish": "npm run build",
 		"pretest": "npm run build",
 		"test": "xo && ava"
@@ -47,15 +52,19 @@
 		"@babel/cli": "^7.2.3",
 		"@babel/core": "^7.3.3",
 		"@babel/preset-react": "^7.0.0",
-		"ava": "^1.3.1",
+		"@sindresorhus/tsconfig": "^3.0.1",
+		"@types/react": "^18.0.28",
+		"ava": "^5.1.1",
 		"clear-module": "^3.1.0",
 		"eslint-config-xo-react": "^0.19.0",
 		"eslint-plugin-react": "^7.7.0",
 		"eslint-plugin-react-hooks": "^1.4.0",
-		"ink": "^2.0.3",
-		"ink-testing-library": "^1.0.0",
-		"react": "^16.8.2",
+		"ink": "^4",
+		"ink-testing-library": "^3",
+		"react": "^18",
 		"strip-ansi": "^5.0.0",
+		"ts-node": "^10.9.1",
+		"typescript": "^5.0.2",
 		"xo": "^0.24.0"
 	},
 	"peerDependencies": {
@@ -72,8 +81,19 @@
 		"extends": [
 			"xo-react"
 		],
+		"prettier": true,
 		"rules": {
-			"react/no-unused-prop-types": "off"
+			"unicorn/no-hex-escape": "off",
+			"unicorn/filename-case": "off"
 		}
+	},
+	"ava": {
+		"extensions": {
+			"ts": "module",
+			"tsx": "module"
+		},
+		"nodeArguments": [
+			"--loader=ts-node/esm"
+		]
 	}
 }
