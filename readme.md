@@ -6,8 +6,8 @@
 
 ## Install
 
-```
-$ npm install ink-big-text
+```sh
+npm install ink-big-text
 ```
 
 ## Usage

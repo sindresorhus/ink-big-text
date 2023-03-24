@@ -10,23 +10,22 @@
 		"email": "sindresorhus@gmail.com",
 		"url": "https://sindresorhus.com"
 	},
-	"main": "dist.js",
 	"type": "module",
 	"exports": {
-		"types": "./build/index.d.ts",
-		"default": "./build/index.js"
+		"types": "./dist/index.d.ts",
+		"default": "./dist/index.js"
 	},
 	"engines": {
 		"node": ">=14.16"
 	},
 	"scripts": {
 		"build": "tsc",
+		"test": "xo && ava",
 		"prepublish": "npm run build",
-		"pretest": "npm run build",
-		"test": "xo && ava"
+		"pretest": "npm run build"
 	},
 	"files": [
-		"build"
+		"dist"
 	],
 	"keywords": [
 		"ink-component",
@@ -45,46 +44,36 @@
 		"command-line"
 	],
 	"dependencies": {
-		"cfonts": "^2.8.6",
-		"prop-types": "^15.7.2"
+		"cfonts": "^3.1.1",
+		"prop-types": "^15.8.1"
 	},
 	"devDependencies": {
-		"@babel/cli": "^7.2.3",
-		"@babel/core": "^7.3.3",
-		"@babel/preset-react": "^7.0.0",
 		"@sindresorhus/tsconfig": "^3.0.1",
 		"@types/react": "^18.0.28",
-		"ava": "^5.1.1",
-		"clear-module": "^3.1.0",
-		"eslint-config-xo-react": "^0.19.0",
-		"eslint-plugin-react": "^7.7.0",
-		"eslint-plugin-react-hooks": "^1.4.0",
-		"ink": "^4",
-		"ink-testing-library": "^3",
-		"react": "^18",
-		"strip-ansi": "^5.0.0",
+		"ava": "^5.2.0",
+		"clear-module": "^4.1.2",
+		"eslint-config-xo-react": "^0.27.0",
+		"eslint-plugin-react": "^7.32.2",
+		"eslint-plugin-react-hooks": "^4.6.0",
+		"ink": "^4.0.0",
+		"ink-testing-library": "^3.0.0",
+		"react": "^18.2.0",
+		"strip-ansi": "^7.0.1",
 		"ts-node": "^10.9.1",
 		"typescript": "^5.0.2",
-		"xo": "^0.24.0"
+		"xo": "^0.53.1"
 	},
 	"peerDependencies": {
-		"ink": ">=2.0.0",
-		"react": ">=16.8.0"
-	},
-	"babel": {
-		"presets": [
-			"@ava/stage-4",
-			"@babel/preset-react"
-		]
+		"ink": ">=4",
+		"react": ">=18"
 	},
 	"xo": {
 		"extends": [
 			"xo-react"
 		],
-		"prettier": true,
 		"rules": {
-			"unicorn/no-hex-escape": "off",
-			"unicorn/filename-case": "off"
+			"unicorn/filename-case": "off",
+			"@typescript-eslint/naming-convention": "off"
 		}
 	},
 	"ava": {
