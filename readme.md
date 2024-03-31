@@ -29,7 +29,7 @@ render(
 
 ### `<BigText/>`
 
-Props except for `text` are passed as options to [`cfonts`](https://github.com/dominikwilkowski/cfonts). The only difference is that the `background` option is named `backgroundColor` here. See the prop types in [`index.js`](index.js) for more.
+Props except for `text` are passed as options to [`cfonts`](https://github.com/dominikwilkowski/cfonts). The only difference is that the `background` option is named `backgroundColor` here. See the prop types in [`index.tsx`](https://github.com/sindresorhus/ink-big-text/blob/main/source/index.tsx#L5) for more.
 
 ## Related
 
